@@ -150,7 +150,7 @@ App =
       if(c_id == constituencyId)
       {
         console.log(i+" "+cid+" "+can_name)
-        var candidateTemplate = "<tr><td><input type='radio' name='ok' id='candidate' value= "+ cid+ ">" + can_name + "</td><td>" + party_name +  "</td><td><img class='rounded-circle' src='./static/"+party_name+".png' height='100' width='100'></td><td>"+votes+"</td></tr>"
+        var candidateTemplate = "<tr><td>" + can_name + "</td><td>" + party_name +  "</td><td><img class='rounded-circle' src='./static/"+party_name+".png' height='100' width='100'></td><td>"+votes+"</td></tr>"
         candidatesResult.append(candidateTemplate);
       }
       else{
@@ -190,6 +190,8 @@ App =
         randomString = randomString +" "+words[index];
       }   
 }
+var Ins= "IMPORTANT: Store this secret message and number, it will needed during login, it wont be available again."
+$('#instruction').html(Ins)
 $('#secret_msg').html(randomString)
 
 var RNlength=Math.floor(Math.random() * (7 - 4) ) + 4; 
@@ -386,7 +388,7 @@ $("#ID").html("Your Account ID: "+account);
                 var e = ele[i].value; 
             } 
     console.log("e:"+e)
-    var candidateName = e;  
+    //var candidateName = e;  
     await App.voting.vote(e);
     alert("Thank you for Voting!")
     //{from: account} 

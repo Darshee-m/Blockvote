@@ -21,9 +21,8 @@ contract evote {
         string party_name;
     }
     
-    //add secret hash and ref no.
     struct VoterId {
-        uint eid;
+        uint eid;//ethereum id
         bytes32 hash;
     }
     
@@ -36,7 +35,7 @@ contract evote {
     }
     
     address admin;
-    uint256 voterCount=0;
+    uint256 public voterCount=0;
     mapping(uint => Voter) public voters;
     mapping(address=> VoterId) public voterids;
     mapping(uint => Candidate) public candidates;
